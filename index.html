@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معلم لياسة محترف 🏗️ 780332004</title>
+
+    <style>
+        /* ===== إعدادات الألوان والتصميم ===== */
+        :root {
+            --main-red: #e63946;
+            --navy: #1e293b;
+            --green: #25d366;
+            --light-bg: #f8fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 10px;
+            color: var(--navy);
+        }
+
+        /* ===== الحاوية الرئيسية ===== */
+        .main-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 480px;
+            padding: 30px 20px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 1px solid #edf2f7;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            color: var(--navy);
+        }
+
+        .badge {
+            background: var(--main-red);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 17px;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* ===== قائمة الخدمات ===== */
+        .services-list {
+            text-align: right;
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+        }
+
+        .services-list div {
+            margin-bottom: 10px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .services-list div::before {
+            content: "✔️";
+            color: var(--main-red);
+        }
+
+        /* ===== رقم الهاتف الضخم ===== */
+        .call-link {
+            display: block;
+            font-size: 45px;
+            color: var(--main-red);
+            font-weight: 900;
+            text-decoration: none;
+            margin: 20px 0;
+            direction: ltr;
+            letter-spacing: 2px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* ===== أزرار الفعل ===== */
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--green);
+            color: #fff;
+            padding: 18px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 20px;
+            gap: 10px;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        /* ===== معرض الصور (أماكن محجوزة) ===== */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            border-radius: 15px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            background: #e2e8f0;
+        }
+
+        /* ===== الأزرار العائمة للموبايل ===== */
+        .sticky-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        .sticky-btn {
+            flex: 1;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        .btn-call {
+            background: var(--main-red);
+        }
+
+        .btn-whats-small {
+            background: var(--green);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-card">
+        <div class="badge">خصم 20% لفترة محدودة</div>
+        <h1>🏗️ معلم لياسة ومقاولات</h1>
+        <p>نقدم أفضل خدمات اللياسة والترميم بأعلى معايير الجودة والدقة في الميزان.</p>
+
+        <div class="services-list">
+            <div>لياسة داخلية وخارجية</div>
+            <div>تربيع وتأكيس محترف</div>
+            <div>ترميم جدران ومعالجة شقوق</div>
+            <div>تلييص واجهات وملاحق</div>
+        </div>
+
+        <div class="image-grid">
+            <img src="images/1.webp" alt="لياسة 1">
+            <img src="images/2.webp" alt="لياسة 2">
+            <img src="images/3.webp" alt="لياسة 3">
+            <img src="images/4.webp" alt="لياسة 4">
+        </div>
+
+        <a href="tel:+967780332004" class="call-link">780332004</a>
+
+        <a href="https://wa.me/967780332004" class="btn-whatsapp">
+            💬 تواصل واتساب الآن
+        </a>
+
+        <div style="margin-top: 25px; font-size: 12px; color: #94a3b8;">
+            © جميع الحقوق محفوظة لخدمات المقاولات 2026
+        </div>
+    </div>
+
+    <div class="sticky-footer">
+        <a href="tel:+967780332004" class="sticky-btn btn-call">📞 اتصل الآن</a>
+        <a href="https://wa.me/967780332004" class="sticky-btn btn-whats-small">💬 واتساب</a>
+    </div>
+
+</body>
+
+</html>
