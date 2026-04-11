@@ -2,9 +2,9 @@
 import React from 'react';
 
 export default function Gallery() {
-  // هنا نقوم بتوليد أو وضع روابط الـ 15 صورة
+  // توليد مسارات الصور المحلية من 1 إلى 15 بصيغة webp
   const workImages = Array.from({ length: 15 }, (_, i) => 
-    `https://via.placeholder.com/600x600/edf2f7/a0aec0?text=Work+Image+${i + 1}`
+    `/images/${i + 1}.webp`
   );
 
   return (
@@ -18,8 +18,12 @@ export default function Gallery() {
           <img 
             src={img} 
             alt={`عمل لياسة وترميم ${index + 1}`}
-            className="w-full h-auto rounded-xl object-cover transition-transform active:scale-[0.98]"
-            loading="lazy" // ميزة مهمة لتسريع تحميل الموقع
+            className="w-full h-auto rounded-xl object-cover"
+            loading="lazy"
+            // إضافة معالجة في حال لم تكن الصورة موجودة بعد
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = "https://via.placeholder.com/600x400?text=جاري+رفع+الصورة";
+            }}
           />
         </div>
       ))}
