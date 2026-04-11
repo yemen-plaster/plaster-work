@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --main-red: #e63946;
+  --navy: #1e293b;
+  --green: #25d366;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f8fafc;
+  color: var(--navy);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* أي تنسيقات إضافية تريدها من ملفك القديم ضعها هنا */
