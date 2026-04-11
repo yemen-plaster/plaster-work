@@ -26,7 +26,7 @@ export default function Home() {
 
         <div className="flex items-center gap-6 text-sm text-[#718096] mb-4">
           <span className="flex items-center gap-1.5 font-medium">📍 صنعاء</span>
-          <span className="flex items-center gap-1.5 font-medium">🕒 قبل ساعتين</span>
+          <span className="flex items-center gap-1.5 font-medium"> جميع محافظات الجمهورية</span>
         </div>
 
         <div className="flex items-center justify-between border-t pt-4">
