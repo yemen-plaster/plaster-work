@@ -10,7 +10,7 @@ export default function Home() {
   const phoneNumber = "780332004";
   const internationalNumber = "+967780332004";
 
-  // روابط الصور (استبدلها بصور أعمالك الحقيقية لاحقاً في مجلد public/images)
+  // روابط الصور
   const workImages = [
     "https://via.placeholder.com/600x600/edf2f7/a0aec0?text=Work+Image+1",
     "https://via.placeholder.com/600x600/edf2f7/a0aec0?text=Work+Image+2",
@@ -19,13 +19,13 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#f1f3f5] text-[#1a202c] pb-32" dir="rtl">
-      
-      {/* 1. قسم البيانات الرئيسية والعنوان في الأعلى (بداية الصفحة) */}
+
+      {/* 1. قسم البيانات الرئيسية والعنوان */}
       <section className="bg-white p-5 border-b border-[#e2e8f0]">
         <h1 className="text-2xl font-black leading-tight mb-4 text-[#1a202c]">
           🏗️ معلم لياسة ومقاولات - اليمن
         </h1>
-        
+
         <div className="flex items-center gap-6 text-sm text-[#718096] mb-4">
           <span className="flex items-center gap-1.5 font-medium">📍 صنعاء</span>
           <span className="flex items-center gap-1.5 font-medium">🕒 قبل ساعتين</span>
@@ -34,7 +34,7 @@ export default function Home() {
         <div className="flex items-center justify-between border-t pt-4">
           <div className="flex items-center gap-3">
             <div className="w-11 h-11 bg-gray-200 rounded-full flex items-center justify-center text-xl text-gray-500">👤</div>
-            <span className="font-bold text-base text-[#2d3748]">PAINTS_RIYADH</span>
+            <span className="font-bold text-base text-[#2d3748]">yemen-plaster</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -43,7 +43,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. قسم أزرار الاتصال (نفس ألوان مستعمل) */}
+      {/* 2. قسم أزرار الاتصال */}
       <section className="p-4 bg-white border-b border-[#e2e8f0]">
         <div className="flex gap-3.5 mb-3.5">
           <a 
@@ -61,7 +61,7 @@ export default function Home() {
             واتساب
           </a>
         </div>
-        
+
         <button className="w-full flex items-center justify-center gap-2.5 bg-[#2d5a27] text-white py-3.5 rounded-xl font-black shadow-sm active:brightness-110 transition-all">
           <span>📩</span>
           أرسل رسالة للمعلم
@@ -70,24 +70,18 @@ export default function Home() {
 
       {/* 3. صندوق المعلومات والوصف التفصيلي */}
       <section className="p-4 space-y-5">
-        <div className="bg-[#ebf5ff] p-5 rounded-xl border border-[#cce3f5] flex items-center gap-4">
-        
-
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#e2e8f0] space-y-4">
           <h2 className="text-xl font-black text-[#1a202c] border-b pb-4">وصف الخدمة</h2>
           <div className="text-[#4a5568] leading-[1.8] font-medium space-y-4">
             <p>أفضل معلم تلييس باليمن لجميع أعمال التلييس الداخلية والخارجية. دقة وسرعة في التنفيذ.</p>
-            <p className="flex items-center gap-2">📞 للتواصل: 
-              <a href={`tel:${phoneNumber}`} className="text-[#3182ce] font-bold underline text-lg tracking-wide">{phoneNumber}</a>
+            <p className="flex items-center gap-2 font-bold text-lg">📞 للتواصل: 
+              <a href={`tel:${phoneNumber}`} className="text-[#3182ce] underline tracking-wide">{phoneNumber}</a>
             </p>
-            <div className="bg-gray-50 p-4 rounded-lg border border-dashed border-gray-300">
-              
-            </div>
           </div>
         </div>
       </section>
 
-      {/* 4. قسم معرض الصور في الأخير (تحت الوصف وتحت كل شيء) */}
+      {/* 4. معرض الصور */}
       <section className="p-4 space-y-4">
         <h2 className="text-xl font-black text-[#1a202c] p-1">معرض أعمالنا</h2>
         {workImages.map((img, index) => (
@@ -100,8 +94,6 @@ export default function Home() {
           </div>
         ))}
       </section>
-       </div>
-      </nav>
 
     </main>
   );
