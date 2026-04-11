@@ -34,9 +34,9 @@ export default function Home() {
         <div className="text-right bg-[#f1f5f9] p-6 rounded-[25px] mb-8">
           {[
             "لياسة داخلية وخارجية",
-            "تربيع وتأكيس محترف",
+            "تربيع وأوتار محترف",
             "ترميم جدران ومعالجة شقوق",
-            "تلييص واجهات وملاحق"
+            "تلييس واجهات وملاحق"
           ].map((service, index) => (
             <div key={index} className="mb-3 font-bold flex items-center gap-3 text-[#1e293b]">
               <span className="text-[#e63946]">✔️</span>
