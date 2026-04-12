@@ -1,17 +1,14 @@
-'use client'; // مهمة جداً لأننا سنستخدم تفاعل المستخدم (الضغط)
+'use client';
 
 import React, { useState } from 'react';
 import Image from 'next/image';
 
 export default function Gallery() {
-  // حالة (State) لحفظ الصورة التي يضغط عليها المستخدم
+  // حالة (State) لحفظ الصورة التي يضغط عليها المستخدم لتكبيرها
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  // مصفوفة الأسماء
-  const imageNames = Array.from({ length: 15 }, (_, i) => {
-    const num = (i + 1).toString().padStart(2, '0');
-    return `img${num}`;
-  });
+  // التعديل هنا: توليد الأسماء من img1 إلى img15 (بدون إضافة الصفر)
+  const imageNames = Array.from({ length: 15 }, (_, i) => `img${i + 1}`);
 
   return (
     <section className="p-4 space-y-4">
@@ -23,7 +20,7 @@ export default function Gallery() {
           <div 
             key={index} 
             className="bg-white p-2 rounded-2xl shadow-sm border border-[#e2e8f0] cursor-pointer transform transition-transform active:scale-[0.98]"
-            onClick={() => setSelectedImage(`/images/${name}.jpg`)} // عند الضغط، نحفظ مسار الصورة
+            onClick={() => setSelectedImage(`/images/${name}.jpg`)} // عند الضغط نفتح الصورة
           >
             <div className="relative w-full h-72 overflow-hidden rounded-xl bg-gray-100 flex items-center justify-center">
               <Image 
@@ -31,8 +28,7 @@ export default function Gallery() {
                 alt={`أعمال لياسة - صورة ${index + 1}`}
                 fill
                 className="object-cover"
-                // أول صورتين نحملهن فوراً، والباقي نؤجل تحميله لتسريع الموقع
-                priority={index < 2}
+                priority={index < 2} // تسريع تحميل أول صورتين
                 loading={index >= 2 ? "lazy" : undefined}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
@@ -45,11 +41,11 @@ export default function Gallery() {
       {selectedImage && (
         <div 
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-2 backdrop-blur-sm transition-opacity"
-          onClick={() => setSelectedImage(null)} // الإغلاق عند الضغط على أي مكان
+          onClick={() => setSelectedImage(null)} // الإغلاق عند الضغط على الشاشة
         >
           {/* زر الإغلاق */}
           <button 
-            className="absolute top-6 right-6 w-10 h-10 bg-white/10 rounded-full text-white text-2xl font-bold flex items-center justify-center border border-white/20 active:bg-white/30"
+            className="absolute top-6 right-6 w-10 h-10 bg-white/10 rounded-full text-white text-2xl font-bold flex items-center justify-center border border-white/20 active:bg-white/30 z-50"
             onClick={() => setSelectedImage(null)}
           >
             &times;
@@ -61,7 +57,7 @@ export default function Gallery() {
               src={selectedImage}
               alt="صورة مكبرة"
               fill
-              className="object-contain" // يضمن عرض الصورة بالكامل بدون قص لتسهيل التكبير
+              className="object-contain" // لعرض الصورة بالكامل بدون قص
               sizes="100vw"
               priority
             />
