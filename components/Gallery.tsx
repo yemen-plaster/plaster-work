@@ -1,31 +1,31 @@
-// components/Gallery.tsx
 import React from 'react';
+import Image from 'next/image';
 
 export default function Gallery() {
-  // توليد مسارات الصور من img1.jpg إلى img15.jpg
-  const workImages = Array.from({ length: 15 }, (_, i) => 
-    `/images/img${i + 1}.jpg`
-  );
+  const imageNames = Array.from({ length: 15 }, (_, i) => {
+    const num = (i + 1).toString().padStart(2, '0');
+    return `img${num}`;
+  });
 
   return (
     <section className="p-4 space-y-4">
-      <h2 className="text-xl font-black text-[#1a202c] p-1 text-right">
-        معرض أعمالنا ({workImages.length} صورة)
-      </h2>
-      
-      {workImages.map((img, index) => (
-        <div key={index} className="bg-white p-2 rounded-2xl shadow-sm border border-[#e2e8f0]">
-          <img 
-            src={img} 
-            alt={`عمل لياسة وترميم ${index + 1}`}
-            className="w-full h-auto rounded-xl object-cover"
-            loading="lazy"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = "https://via.placeholder.com/600x400?text=جاري+رفع+الصورة";
-            }}
-          />
-        </div>
-      ))}
+      <h2 className="text-xl font-black text-[#1a202c] p-1 text-right">معرض أعمالنا</h2>
+      <div className="grid grid-cols-1 gap-5">
+        {imageNames.map((name, index) => (
+          <div key={index} className="bg-white p-2 rounded-2xl shadow-sm border border-[#e2e8f0]">
+            <div className="relative w-full h-72 overflow-hidden rounded-xl">
+              <Image 
+                src={`/images/${name}.jpg`} 
+                alt={`أعمال لياسة - صورة ${index + 1}`}
+                fill
+                className="object-cover"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
