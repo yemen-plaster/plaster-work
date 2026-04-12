@@ -2,9 +2,9 @@
 import React from 'react';
 
 export default function Gallery() {
-  // توليد مسارات الصور المحلية من 1 إلى 15 بصيغة webp
+  // توليد مسارات الصور من img1.jpg إلى img15.jpg
   const workImages = Array.from({ length: 15 }, (_, i) => 
-    `/images/${i + 1}.webp`
+    `/images/img${i + 1}.jpg`
   );
 
   return (
@@ -20,7 +20,6 @@ export default function Gallery() {
             alt={`عمل لياسة وترميم ${index + 1}`}
             className="w-full h-auto rounded-xl object-cover"
             loading="lazy"
-            // إضافة معالجة في حال لم تكن الصورة موجودة بعد
             onError={(e) => {
               (e.target as HTMLImageElement).src = "https://via.placeholder.com/600x400?text=جاري+رفع+الصورة";
             }}
