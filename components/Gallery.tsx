@@ -45,7 +45,7 @@ export default function Gallery() {
           >
             <div className="relative w-full h-72 overflow-hidden rounded-xl bg-gray-100 flex items-center justify-center">
               <Image 
-                src={`/images/${name}.jpg`} 
+                src={`/images/${name}.webp`} 
                 alt={imageDescriptions[index]} // 💡 هنا تم حقن الـ SEO لكل صورة بشكل فريد
                 fill
                 className="object-cover"
@@ -78,7 +78,7 @@ export default function Gallery() {
           {/* الصورة المكبرة */}
           <div className="relative w-full max-w-4xl h-[85vh]">
             <Image 
-              src={`/images/${imageNames[selectedImageIndex]}.jpg`}
+              src={`/images/${imageNames[selectedImageIndex]}.webp`}
               alt={imageDescriptions[selectedImageIndex]} // 💡 الـ Alt اليناميكي للصورة المكبرة أيضاً
               fill
               className="object-contain" // لعرض الصورة بالكامل بدون قص
